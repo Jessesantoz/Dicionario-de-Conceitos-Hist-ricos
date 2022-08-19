@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body style="background-color: rgba(55, 4, 196, 0.616);">
+
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(5, 1, 14, 0.842);">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://localhost:8000">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8000/admin">Cadastrar Conceito</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Conceito" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Pesquisar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      
+    <div class="conteiner text-center mt-5">
+      <h1 class="mb-2">Conceito:</h1>
+        <div class="conteiner p-5 rounded">
+          <div class="card text-center">
+            <div class="card-header">
+              <h2><%= conceito.title %></h2>
+            </div>
+            <div class="card-body">
+              <p><%= conceito.description %></p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+      
+</body>
+</html>
