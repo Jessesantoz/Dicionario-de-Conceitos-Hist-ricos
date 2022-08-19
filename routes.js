@@ -50,21 +50,26 @@ function routes(app) {
 
     app.post('/admin/news', (req, res) => {
         const {title, description} = req.body
+        const errors = []
 
         console.log(req.body)
 
         if (!title) {
-            res.status(500).send("<h1>Title required</h1>")
+            res.status(500).send("<h1>O titulo é obrigatorio</h1>")
             return;
         } 
         if (!description){
-            res.status(500).send("<h1>Description require</h1>")
+            res.status(500).send("<h1>A descrição é obrigatoria</h1>")
             return;
         }
     
         const novaNoticia = {
             title,
             description
+        }
+
+        if (errors.length > 0) {
+            res.status(401).json({msgs: errors})
         }
     
         conceitos.push(novaNoticia)
