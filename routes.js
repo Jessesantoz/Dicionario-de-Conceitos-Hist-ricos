@@ -55,12 +55,10 @@ function routes(app) {
         console.log(req.body)
 
         if (!title) {
-            res.status(500).send("<h1>O titulo é obrigatorio</h1>")
-            return;
+            errors.push("<h1>O titulo é obrigatorio</h1>")
         } 
         if (!description){
-            res.status(500).send("<h1>A descrição é obrigatoria</h1>")
-            return;
+            errors.push("<h1>A descrição é obrigatoria</h1>")
         }
     
         const novaNoticia = {
@@ -70,11 +68,12 @@ function routes(app) {
 
         if (errors.length > 0) {
             res.status(401).json({msgs: errors})
+            return
         }
     
         conceitos.push(novaNoticia)
-        //res.json({status: true})
-        res.render('confirmação')
+        res.status({status: true})
+        //res.render('confirmação')
     })
 
     

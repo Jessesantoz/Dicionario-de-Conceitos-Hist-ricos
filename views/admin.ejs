@@ -42,7 +42,6 @@
                 <div class="conteiner text-center mt-5">
                     <h1 class="mb-5" style="color: white;">Adicione um Conceito Histórico:</h1>
             
-                    <form action="/admin/news" method="post">
 
                       <div class="mb-3">
                         <label for="title" class="form-label"></label>
@@ -53,15 +52,12 @@
                         <textarea class="form-control" name="description" id="description" rows="3" placeholder="Qual o significado?"></textarea>
                       </div>
             
-                      <button type="submit" class="btn btn-outline-light" value="Save">Adicionar</button>
-                        
-                    </form>
-
-                    <p id="errorAviso"></p>
+                      <button onclick="save()" type="submit" class="btn btn-outline-light" value="Save">Adicionar</button>
                 
             </div>
             </div>
           </div>
+          <p class="text-center mt-3" id="errorAviso"></p>
 
 </body>
 <script src="/scrypt.js"></script>

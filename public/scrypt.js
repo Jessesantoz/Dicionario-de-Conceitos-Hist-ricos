@@ -21,11 +21,9 @@ async function requestHTTP(url, method, body) {
 }
 
 async function save() {
-    // pegar dados para o body
     const {error, result} = await requestHTTP('/admin/news', 'POST', body);
-  
-  //  se tiver erro lidar com ele
-  // se for sucesso apresentar mensagem
+
+
   
 if (error) {
     const errorLabel = document.getElementById('errorAviso')
@@ -33,11 +31,15 @@ if (error) {
         let message = ''
 
         for (let i = 0; i < result.msgs.length; i++) {
-            message = message + ', ' + result.msg[i]
+            message = message + result.msg[i]
         }
         errorLabel.textContent = message.slice(2, message.length)
     } else {
         console.error('Falha ao selecionar elemento!')
     }
+    return
 }
+
+document.getElementById('errorAviso').textContent = 'Conceito Adicionado com sucesso'
+
 }
