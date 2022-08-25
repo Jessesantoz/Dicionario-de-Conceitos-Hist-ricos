@@ -21,25 +21,32 @@ async function requestHTTP(url, method, body) {
 }
 
 async function save() {
+
+    const body = { 
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value
+    }
+    
+
+    console.log(body)
+
     const {error, result} = await requestHTTP('/admin/news', 'POST', body);
 
+    if (error) {
+        const errorLabel = document.getElementById('errorAviso')
+        if (errorLabel) {
+            let message = ''
 
-  
-if (error) {
-    const errorLabel = document.getElementById('errorAviso')
-    if (errorLabel) {
-        let message = ''
-
-        for (let i = 0; i < result.msgs.length; i++) {
-            message = message + result.msg[i]
+            for (let i = 0; i < result.msgs.length; i++) {
+                message = message + ', ' + result.msgs[i]
+            }
+            errorLabel.textContent = message.slice(2, message.length)
+        } else {
+            console.error('Falha ao selecionar elemento!')
         }
-        errorLabel.textContent = message.slice(2, message.length)
-    } else {
-        console.error('Falha ao selecionar elemento!')
+        return
     }
-    return
-}
 
-document.getElementById('errorAviso').textContent = 'Conceito Adicionado com sucesso'
+    document.getElementById('errorAviso').textContent = 'Conceito adicionado com sucesso!'
 
 }

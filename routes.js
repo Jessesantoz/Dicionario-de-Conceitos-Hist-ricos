@@ -55,10 +55,10 @@ function routes(app) {
         console.log(req.body)
 
         if (!title) {
-            errors.push("<h1>O titulo é obrigatorio</h1>")
+            errors.push("O titulo é obrigatorio")
         } 
         if (!description){
-            errors.push("<h1>A descrição é obrigatoria</h1>")
+            errors.push("A descrição é obrigatoria")
         }
     
         const novaNoticia = {
@@ -72,7 +72,7 @@ function routes(app) {
         }
     
         conceitos.push(novaNoticia)
-        res.status({status: true})
+        res.status(200).json({msg: 'dados gravados com sucesso'})
         //res.render('confirmação')
     })
 

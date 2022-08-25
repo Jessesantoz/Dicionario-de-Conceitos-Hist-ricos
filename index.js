@@ -9,7 +9,8 @@ const bodyParser = require('body-parser')
 app.use(express.static('./app/public'));
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
