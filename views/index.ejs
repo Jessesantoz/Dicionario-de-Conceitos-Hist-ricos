@@ -37,25 +37,23 @@
         <div class="container my-5 ">
           <div class="bg-light p-5 rounded">
             <div class="row">
-            <div class="col-xxl-4 py-5 mx-auto">
+              <div class="col">
               <img src="/imagens/filosof.png" alt="" width="240" height="240">
-            </div>
-            <div class="col-lg-8 py-5 mx-auto">
+              </div>
+              <div class="col-8">
               <h1 class="display-5 fw-normal">Navege pelos conceitos</h1>
               <p class="fs-5">Esse site tem a proposta de apresentar os conceitos históricos sob um olhar profundo e resumido</p>
               <p>Os conceitos são elaborados e escrito por historiadores e especialistas da área. Confiança, metodologia e conhecimento.</p>
               <p>
                 <a class="btn btn-outline-dark" href="http://localhost:8000/conceitos" role="button">Acesse a biblioteca de conceitos completa</a>
               </p>
-            </div>
-          </div>
           </div>
         </div>
 
         <h1 class="display-5 fw-normal text-center mb-5" style="color: white;">ESCOLHA UMA LETRA:</h1>
 
         <div class="d-grid gap-2 d-md-block text-center mb-3">
-        <% const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', "W", 'X', 'Y', 'Z'] %>
+        <% const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', "W", 'X', 'Y'] %>
         <% for(let i = 0; i < letters.length; i++) { %> 
           <a class="btn btn-dark" style="background-color: rgba(5, 1, 14, 0.842);" role="button" href="http://localhost:8000/conceitos/pesquisa/?letra=<%= letters[i] %>">
               <%= letters[i] %> 
