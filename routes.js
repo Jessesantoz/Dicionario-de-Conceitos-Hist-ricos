@@ -3,6 +3,7 @@ const conceitos = require('./db/conceitos')
 const conceito = require('./db/conceitos')
 
 function routes(app) {
+    
     app.get('/', (req, res) => {
         res.render('index', {
             conceito: conceitos
